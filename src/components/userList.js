@@ -8,13 +8,15 @@ export function UserList() {
     const dispatch = useDispatch();
     console.log("test",test);
     return (
-        <table>
+        <div>
+        <h1> Users</h1>
+        <table style={{marginLeft:'auto', marginRight: 'auto'}}>
         <tbody>
            { 
            users.map(x=><tr key={x.id}>
-               <td style={{border : '1px solid red'}}>{x.id}</td>
-               <td style={{border : '1px solid red'}}>{x.name}</td>
-               <td style={{border : '1px solid red'}}>{x.email}</td>
+               <td>{x.id}</td>
+               <td>{x.name}</td>
+               <td>{x.email}</td>
                <td>
                    <button onClick={()=>dispatch(deleteUser({
             id:x.id
@@ -27,5 +29,6 @@ export function UserList() {
            )}
         </tbody>
         </table>
+        </div>
     );
 }
